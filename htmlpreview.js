@@ -88,10 +88,7 @@
 	};
 	
 	var fetchProxy = function (url, options, i) {
-		var proxy = [
-			'', // try without proxy first
-			'https://api.codetabs.com/v1/proxy/?quest='
-		];
+		var proxy = [''];
 		return fetch(proxy[i] + url, options).then(function (res) {
 			if (!res.ok) throw new Error('Cannot load ' + url + ': ' + res.status + ' ' + res.statusText);
 			return res.text();
